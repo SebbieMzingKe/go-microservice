@@ -2,11 +2,12 @@ package main
 
 import (
 	"context"
-
+	pb "common/api"
 )
 
-type OrderService interface {
+type OrdersService interface {
 	CreateOrder(context.Context) error
+	ValidateOrder(context.Context, *pb.CreateOrderRequest) error
 }
 
 type OrdersStore interface {
